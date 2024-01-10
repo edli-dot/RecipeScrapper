@@ -1,0 +1,26 @@
+{
+  "name": "recipescrapper",
+  "version": "1.0.0",
+  "description": "Application that compiles recipes without all the fluff",
+  "main": "index.js",
+  "scripts": {
+    "test": "dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edli-dot/RecipeScrapper.git"
+  },
+  "author": "Edward Li",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edli-dot/RecipeScrapper/issues"
+  },
+  "homepage": "https://github.com/edli-dot/RecipeScrapper#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "webpack": "^5.89.0"
+  }
+}
