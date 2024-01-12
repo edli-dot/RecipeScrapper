@@ -4,7 +4,12 @@
   "description": "Application that compiles recipes without all the fluff",
   "main": "index.js",
   "scripts": {
-    "test": "dev"
+    "test": "dev",
+    "start:webpack": "webpack-dev-server --config webpack.config.js",
+    "start:express": "nodemon server/server.js",
+    "start:both": "NODE_ENV=development concurrently \"npm run start:webpack\" \"npm run start:express\"",
+    "dev": "NODE_ENV=development EXPRESS_PORT=3010 concurrently 'nodemon server/server.js' 'webpack-dev-server --open'",
+    "start": "NODE_ENV=development webpack-dev-server & NODE_ENV=development nodemon server/server.js --open"
   },
   "repository": {
     "type": "git",
@@ -17,10 +22,28 @@
   },
   "homepage": "https://github.com/edli-dot/RecipeScrapper#readme",
   "dependencies": {
+    "express": "^4.18.2",
     "react": "^18.2.0",
     "typescript": "^5.3.3"
   },
   "devDependencies": {
-    "webpack": "^5.89.0"
+    "@babel/preset-env": "^7.23.8",
+    "@babel/preset-react": "^7.23.3",
+    "babel-loader": "^9.1.3",
+    "concurrently": "^8.2.2",
+    "cors": "^2.8.5",
+    "css-loader": "^6.9.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.6.0",
+    "nodemon": "^3.0.2",
+    "path": "^0.12.7",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.21.2",
+    "sass": "^1.69.7",
+    "sass-loader": "^13.3.3",
+    "style-loader": "^3.3.4",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
   }
 }
